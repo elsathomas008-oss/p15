@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Bridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="#" class="logo">SupplyBridge*</a>
+
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#">Blog &#x25BE;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Latest News</a></li>
+                    <li><a href="#">Articles</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#">Plans &#x25BE;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Freelancer</a></li>
+                    <li><a href="#">Startup</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+
+        <div class="auth-buttons">
+            <!-- Theme Toggle Button (Light / Dark Mode) -->
+            <button type="button" id="theme-btn" class="btn-theme" onclick="toggleTheme()">&#9790; Dark Mode</button>
+            <a href="#" class="btn-login">Log In</a>
+            <a href="#" class="btn-signup">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <h1>Welcome to Supply Bridge</h1>
+        <p>Supply Bridge provides seamless supply chain solutions designed to streamline business operations and connect logistics efficiently.</p>
+
+        <!-- Key Services Section -->
+        <div class="features-section">
+            <h3>Key Services</h3>
+            <ul class="simple-list">
+                <li>Inventory Management</li>
+                <li>Real-time Order Processing</li>
+                <li>Vendor Management</li>
+            </ul>
+        </div>
+
+        <!-- Inquiry Form Section -->
+        <div class="form-section">
+            <h3>Quick Inquiry</h3>
+            <form action="/" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Supply Bridge. All rights reserved[cite: 1].</p>
+    </footer>
+
+    <script>
+        var clickCount = 0;
+
+        function toggleTheme() {
+            clickCount++;
+
+            var btn = document.getElementById("theme-btn");
+            var card = document.getElementById("main-box");
+            var heading = document.getElementById("main-heading");
+            var desc = document.getElementById("main-desc");
+            var servicesHeading = document.getElementById("services-heading");
+            var servicesList = document.getElementById("services-list");
+            var formHeading = document.getElementById("form-heading");
+
+            // Odd clicks = Dark Mode
+            if (clickCount % 2 != 0) {
+                document.body.style.backgroundColor = "#0b132b";
+                document.body.style.color = "#ffffff";
+                card.style.backgroundColor = "#1c2541";
+                card.style.borderColor = "#2b3a67";
+                heading.style.color = "#ffffff";
+                desc.style.color = "#cbd5e1";
+                servicesHeading.style.color = "#ffffff";
+                servicesList.style.color = "#cbd5e1";
+                formHeading.style.color = "#ffffff";
+                btn.style.backgroundColor = "#ffffff";
+                btn.style.color = "#0b132b";
+                btn.innerHTML = "&#9728; Light Mode";
+            }
+            // Even clicks = Light Mode
+            else {
+                document.body.style.backgroundColor = "#f4f6f9";
+                document.body.style.color = "#333333";
+                card.style.backgroundColor = "#ffffff";
+                card.style.borderColor = "#e1e4e8";
+                heading.style.color = "#1e1e1e";
+                desc.style.color = "#555555";
+                servicesHeading.style.color = "#333333";
+                servicesList.style.color = "#333333";
+                formHeading.style.color = "#333333";
+                btn.style.backgroundColor = "#0056b3";
+                btn.style.color = "#ffffff";
+                btn.innerHTML = "&#9790; Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>
